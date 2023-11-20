@@ -1,0 +1,63 @@
+###
+### A complete description of a Prefect Deployment for flow 'passwd-flow'
+###
+name: gen_passwd_docker_infra
+description: null
+version: 118e23018f0f798f02af4ff5bebaf8da
+# The work queue that will handle this deployment's runs
+work_queue_name: test
+work_pool_name: default-agent-pool
+tags: []
+parameters: {}
+schedule: null
+is_schedule_active: true
+infra_overrides: {}
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: passwd-flow
+manifest_path: null
+infrastructure:
+  type: docker-container
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  image: prefecthq/prefect:2.14.5-python3.10
+  image_pull_policy: null
+  image_registry: null
+  networks: []
+  network_mode: null
+  auto_remove: false
+  volumes: []
+  stream_output: true
+  memswap_limit: null
+  mem_limit: null
+  privileged: false
+  _block_document_id: 13c7fae6-e811-4953-a2d4-23bf55f04f10
+  _block_document_name: genpasswdcontainer
+  _is_anonymous: false
+  block_type_slug: docker-container
+  _block_type_slug: docker-container
+storage:
+  repository: https://github.com/TRABZI/genpasswd
+  reference: master
+  access_token: null
+  include_git_objects: true
+  _block_document_id: 98d87c55-f7f7-4985-ac4a-c54a56098b8f
+  _block_document_name: genpasswd
+  _is_anonymous: false
+  block_type_slug: github
+  _block_type_slug: github
+path: ''
+entrypoint: main.py:passwd_flow
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties: {}
+  required: null
+  definitions: null
+timestamp: '2023-11-20T16:24:50.719024+00:00'
+triggers: []
+enforce_parameter_schema: null
